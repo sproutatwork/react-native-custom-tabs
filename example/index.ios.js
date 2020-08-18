@@ -1,12 +1,10 @@
-/// <reference path="../typings/index.d.ts" />
-
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
  * @flow
  */
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
@@ -14,7 +12,7 @@ import {
   TouchableHighlight,
   View
 } from 'react-native';
-import {CustomTabs} from 'react-native-custom-tabs';
+import { CustomTabs } from 'react-native-custom-tabs';
 
 export default class Example extends Component {
   render() {

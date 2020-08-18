@@ -1,12 +1,10 @@
-/// <reference path="../typings/index.d.ts" />
-
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
  * @flow
  */
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
@@ -18,7 +16,8 @@ import {
 } from 'react-native';
 import {
   CustomTabs,
-  ANIMATIONS_SLIDE
+  ANIMATIONS_SLIDE,
+  ANIMATIONS_FADE
 } from 'react-native-custom-tabs';
 
 export default class Example extends Component {
@@ -47,7 +46,7 @@ export default class Example extends Component {
           <TouchableHighlight
             underlayColor={'#CFD8DC'}
             onPress={() => this.openDefaultCustomTabs()}
-            style={{marginTop: 8}}>
+            style={{ marginTop: 8 }}>
             <Text style={styles.link}>
               https://www.google.com
             </Text>
@@ -58,7 +57,7 @@ export default class Example extends Component {
           <TouchableHighlight
             underlayColor={'#CFD8DC'}
             onPress={() => this.errorOccur()}
-            style={{marginTop: 8}}>
+            style={{ marginTop: 8 }}>
             <Text style={styles.link}>
               https://www.google.com
             </Text>
@@ -77,7 +76,14 @@ export default class Example extends Component {
       enableUrlBarHiding: true,
       showPageTitle: true,
       enableDefaultShare: true,
-      animations: ANIMATIONS_SLIDE
+      animations: ANIMATIONS_FADE,
+      // animations: {
+      //   startEnter: 'slide_up',
+      //   startExit: 'android:anim/fade_out',
+      //   endEnter: 'android:anim/fade_in',
+      //   endExit: 'slide_down',
+      // },
+      forceCloseOnRedirection: true,
     });
   }
 
